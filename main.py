@@ -35,10 +35,12 @@ player = 0
 index_x = 0
 runtime = True
 
-x_array = [0]*129
-x_array_count = 129
-o_array = [0]*129
-o_array_count = 129
+x_array = [0]*130
+x_array_count = 30
+o_array = [0]*130
+o_array_count = 30
+win_count_x = 0
+win_count_o = 0
 #endregion
 #
 #region -> Button cluster fuck
@@ -362,6 +364,7 @@ while runtime:
             but_txt128 = " "
             but_txt129 = " "
 #endregion -> reset tiles
+#region -> Piles beschriften
 #region -> reihe 0 beschreiben
     if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 0 and maus_pos[1] < 0+100:
         if maus_klick[0] == 1 and maus_aktiv == False:
@@ -481,7 +484,7 @@ while runtime:
         if maus_klick[0] == 0:
             maus_aktiv = False
 #endregion
-#region -> reihe 1 beschreiben
+#region -> reihe 1 beschreibe8
     if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 100 and maus_pos[1] < 100+100:
         if maus_klick[0] == 1 and maus_aktiv == False:
             maus_aktiv = True
@@ -796,21 +799,12 @@ while runtime:
         if maus_klick[0] == 1 and maus_aktiv == False:
             maus_aktiv = True
             if player == 0:
-                but_txt46 = "O"
-            elif player == 1:
-                but_txt46 = "X"
-        if maus_klick[0] == 0:
-            maus_aktiv = False
-    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
-        if maus_klick[0] == 1 and maus_aktiv == False:
-            maus_aktiv = True
-            if player == 0:
                 but_txt47 = "O"
             elif player == 1:
                 but_txt47 = "X"
         if maus_klick[0] == 0:
             maus_aktiv = False
-    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
         if maus_klick[0] == 1 and maus_aktiv == False:
             maus_aktiv = True
             if player == 0:
@@ -819,7 +813,7 @@ while runtime:
                 but_txt48 = "X"
         if maus_klick[0] == 0:
             maus_aktiv = False
-    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
         if maus_klick[0] == 1 and maus_aktiv == False:
             maus_aktiv = True
             if player == 0:
@@ -828,7 +822,7 @@ while runtime:
                 but_txt49 = "X"
         if maus_klick[0] == 0:
             maus_aktiv = False
-    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
         if maus_klick[0] == 1 and maus_aktiv == False:
             maus_aktiv = True
             if player == 0:
@@ -837,7 +831,735 @@ while runtime:
                 but_txt50 = "X"
         if maus_klick[0] == 0:
             maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 300 and maus_pos[1] < 300+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt51 = "O"
+            elif player == 1:
+                but_txt51 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
     #endregion
+    #region -> reihe 4 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt52 = "O"
+            elif player == 1:
+                but_txt52 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt53 = "O"
+            elif player == 1:
+                but_txt53 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt54 = "O"
+            elif player == 1:
+                but_txt54 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt55 = "O"
+            elif player == 1:
+                but_txt55 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt56 = "O"
+            elif player == 1:
+                but_txt56 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt57 = "O"
+            elif player == 1:
+                but_txt57 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt58 = "O"
+            elif player == 1:
+                but_txt58 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt59 = "O"
+            elif player == 1:
+                but_txt59 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt60 = "O"
+            elif player == 1:
+                but_txt60 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt61 = "O"
+            elif player == 1:
+                but_txt61 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt62 = "O"
+            elif player == 1:
+                but_txt62 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt63 = "O"
+            elif player == 1:
+                but_txt63 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 400 and maus_pos[1] < 400+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt64 = "O"
+            elif player == 1:
+                but_txt64 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+    #region -> reihe 5 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt65 = "O"
+            elif player == 1:
+                but_txt65 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt66 = "O"
+            elif player == 1:
+                but_txt66 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt67 = "O"
+            elif player == 1:
+                but_txt67 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt68 = "O"
+            elif player == 1:
+                but_txt68 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt69 = "O"
+            elif player == 1:
+                but_txt69 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt70 = "O"
+            elif player == 1:
+                but_txt70 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt71 = "O"
+            elif player == 1:
+                but_txt71 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt72 = "O"
+            elif player == 1:
+                but_txt72 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt73 = "O"
+            elif player == 1:
+                but_txt73 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt74 = "O"
+            elif player == 1:
+                but_txt74 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt75 = "O"
+            elif player == 1:
+                but_txt75 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt76 = "O"
+            elif player == 1:
+                but_txt76 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 500 and maus_pos[1] < 500+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt77 = "O"
+            elif player == 1:
+                but_txt77 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+    #region -> reihe 6 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt78 = "O"
+            elif player == 1:
+                but_txt78 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt79 = "O"
+            elif player == 1:
+                but_txt79 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt80 = "O"
+            elif player == 1:
+                but_txt80 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt81 = "O"
+            elif player == 1:
+                but_txt81 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt82 = "O"
+            elif player == 1:
+                but_txt82 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt83 = "O"
+            elif player == 1:
+                but_txt83 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt84 = "O"
+            elif player == 1:
+                but_txt84 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt85 = "O"
+            elif player == 1:
+                but_txt85 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt86 = "O"
+            elif player == 1:
+                but_txt86 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt87 = "O"
+            elif player == 1:
+                but_txt87 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt88 = "O"
+            elif player == 1:
+                but_txt88 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt89 = "O"
+            elif player == 1:
+                but_txt89 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 600 and maus_pos[1] < 600+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt90 = "O"
+            elif player == 1:
+                but_txt90 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+    #region -> reihe 7 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt91 = "O"
+            elif player == 1:
+                but_txt91 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt92 = "O"
+            elif player == 1:
+                but_txt92 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt93 = "O"
+            elif player == 1:
+                but_txt93 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt94 = "O"
+            elif player == 1:
+                but_txt94 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt95 = "O"
+            elif player == 1:
+                but_txt95 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt96 = "O"
+            elif player == 1:
+                but_txt96 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt97 = "O"
+            elif player == 1:
+                but_txt97 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt98 = "O"
+            elif player == 1:
+                but_txt98 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt99 = "O"
+            elif player == 1:
+                but_txt99 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt100 = "O"
+            elif player == 1:
+                but_txt100 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt101 = "O"
+            elif player == 1:
+                but_txt101 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt102 = "O"
+            elif player == 1:
+                but_txt102 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 700 and maus_pos[1] < 700+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt103 = "O"
+            elif player == 1:
+                but_txt103 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+    #region -> reihe 8 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt104 = "O"
+            elif player == 1:
+                but_txt104 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt105 = "O"
+            elif player == 1:
+                but_txt105 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt106 = "O"
+            elif player == 1:
+                but_txt106 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt107 = "O"
+            elif player == 1:
+                but_txt107 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt108 = "O"
+            elif player == 1:
+                but_txt108 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt109 = "O"
+            elif player == 1:
+                but_txt109 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt110 = "O"
+            elif player == 1:
+                but_txt110 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt111 = "O"
+            elif player == 1:
+                but_txt111 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt112 = "O"
+            elif player == 1:
+                but_txt112 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt113 = "O"
+            elif player == 1:
+                but_txt113 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt114 = "O"
+            elif player == 1:
+                but_txt114 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt115 = "O"
+            elif player == 1:
+                but_txt115 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 800 and maus_pos[1] < 800+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt116 = "O"
+            elif player == 1:
+                but_txt116 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+    #region -> reihe 8 beschreiben
+    if maus_pos[0] > 0 and maus_pos[0] < 0 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt117 = "O"
+            elif player == 1:
+                but_txt117 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 100 and maus_pos[0] < 100 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt118 = "O"
+            elif player == 1:
+                but_txt118 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 200 and maus_pos[0] < 200 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt119 = "O"
+            elif player == 1:
+                but_txt119 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 300 and maus_pos[0] < 300 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt120 = "O"
+            elif player == 1:
+                but_txt120 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 400 and maus_pos[0] < 400 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt121 = "O"
+            elif player == 1:
+                but_txt121 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 500 and maus_pos[0] < 500 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt122 = "O"
+            elif player == 1:
+                but_txt122 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 600 and maus_pos[0] < 600 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt123 = "O"
+            elif player == 1:
+                but_txt123 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 700 and maus_pos[0] < 700 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt124 = "O"
+            elif player == 1:
+                but_txt124 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 800 and maus_pos[0] < 800 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt125 = "O"
+            elif player == 1:
+                but_txt125 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 900 and maus_pos[0] < 900 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt126 = "O"
+            elif player == 1:
+                but_txt126 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1000 and maus_pos[0] < 1000 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt127 = "O"
+            elif player == 1:
+                but_txt127 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1100 and maus_pos[0] < 1100 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt128 = "O"
+            elif player == 1:
+                but_txt128 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    if maus_pos[0] > 1200 and maus_pos[0] < 1200 + 100 and maus_pos[1] > 900 and maus_pos[1] < 900+100:
+        if maus_klick[0] == 1 and maus_aktiv == False:
+            maus_aktiv = True
+            if player == 0:
+                but_txt129 = "O"
+            elif player == 1:
+                but_txt129 = "X"
+        if maus_klick[0] == 0:
+            maus_aktiv = False
+    #endregion
+
+#endregion
+
+
+
 
 
 #region
@@ -1365,7 +2087,7 @@ while runtime:
 
 
 
-#region -> reihenclusterfuck
+#region -> Reihen Button erstellen
 #region -> row 0
     but0 =button(but_txt0, 0, 0, 100, 100, (255,0,0), (0,255,0), pixel_font30)
     but1 =button(but_txt1, 100, 0, 100, 100, (255,0,0), (0,255,0), pixel_font30)
@@ -1526,6 +2248,50 @@ while runtime:
     elif player == 1:
         draw_text("Spieler 1 ist dran", sys_font30, "green", screen, 1550, 100)
 #endregion
+
+#region -> auswertung
+
+    if x_array_count - 13 <= 0:
+        x_array_count = 0
+    if o_array_count - 13 <= 0:
+        o_array_count = 0
+
+    if x_array[x_array_count - 13]:
+        win_count_x +=1
+    if o_array[o_array_count - 13]:
+        win_count_o +=1
+
+    if x_array[x_array_count - 26]:
+        win_count_x +=1
+    if o_array[o_array_count - 26]:
+        win_count_o +=1
+
+    if x_array[x_array_count - 39]:
+        win_count_x +=1
+    if o_array[o_array_count - 39]:
+        win_count_o +=1
+
+    if x_array[x_array_count + 13]:
+        win_count_x +=1
+    if o_array[o_array_count + 13]:
+        win_count_o +=1
+
+    if x_array[x_array_count + 26]:
+        win_count_x +=1
+    if o_array[o_array_count + 26]:
+        win_count_o +=1
+
+    if x_array[x_array_count + 39]:
+        win_count_x +=1
+    if o_array[o_array_count + 39]:
+        win_count_o +=1
+
+    print(f"win_count_x = {win_count_x}   ------   win_count_o = {win_count_o}")
+
+
+
+#endregion
+
     print(player)
     show_fps()
     pygame.display.flip()
